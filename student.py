@@ -26,9 +26,46 @@ class student:
         @property
         def age(self):
             return self._age
-        
-s1=student("marwan","14",60095071)
+
+from unittest import TestCase
+
+
+class Student_Test(TestCase):
+    def test_id(self):
+        testStudent = student("Marwan", 22, 60095071)
+
+        self.assertEqual(testStudent.id, 1)
+
+    def test_If_ID_Is_negative(self):
+        with self.assertRaises(TypeError):
+            student("Marwan", 23, -1)
+            
+    def test_name(self):
+        testStudent = student("Marwan", 22, 60095071)
+
+        self.assertEqual(testStudent.name, "Marwan")
+
+    
+    def test_age(self):
+        testStudent = student("Marwan", 22, 60095071)
+
+        self.assertEqual(testStudent.age, 22)
+
+    def test_if_Age_is_negative(self):
+        with self.assertRaises(TypeError):
+            student("Marwan", -1, 1)
+
 #to check if the methods works
-print(s1.name)
-print(s1.age) 
+
+s=Student_Test()
+#s.test_name()
+#s.test_id()
+#s.test_age()
+#s.test_if_Age_is_negative()
+#s.test_If_ID_Is_negative()
+
+
+
+
+
 
