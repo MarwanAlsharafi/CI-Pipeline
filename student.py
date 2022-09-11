@@ -1,5 +1,37 @@
 from unittest import TestCase
 
+students=[]
+
+def AddStudent():
+    counter=0
+    while counter!=3:
+    
+        name=str(input("enter your name"))
+        age=int(input("enter your age"))
+        id=int(input("enter the id"))
+
+        
+        student(name,age,id)
+
+        if FindStudent(id)==True:
+            return
+            
+            
+        else:
+            
+            students.append({'name':name,'age':age,'id':id,})
+            counter=counter+1
+            print(students)
+
+
+def FindStudent(id):
+    counter2=0
+    while counter2 < len(students):
+      
+        if students[counter2]['id']==id:
+            print("id exist")
+            return
+        
 
 class student:
     def __init__(self,name,age,id):
@@ -65,12 +97,12 @@ class Student_Test(TestCase):
 s=Student_Test()
 #s.test_name()
 #s.test_id()
-s.test_age()
+#s.test_age()
 #s.test_if_Age_is_negative()
 #s.test_If_ID_Is_negative()
 
 
-
+AddStudent()
 
 
 
