@@ -7,20 +7,20 @@ def AddStudent():
     counter=0
     while counter!=1:
     
-        name=str(input("enter your name"))
-        age=int(input("enter your age"))
-        id=int(input("enter the id"))
+        name=str(input("enter your name "))
+        age=int(input("enter your age "))
+        id=int(input("enter the id "))
         
         student(name,age,id)    
         students.append({'name':name,'age':age,'id':id,})
         counter=counter+1
         print(students)
 
-    find=int(input('enter the student id to find the student'))
+    find=int(input('enter the student id to find the student '))
         
     FindStudent(find)
 
-    delete=int(input('enter the student id to delete the student'))
+    delete=int(input('enter the student id to delete the student '))
     DeleteStudent(delete)
 
     print(students)
@@ -38,6 +38,7 @@ def DeleteStudent(id):
       
         if students[counter]['id']==id:
             del students[counter]
+        else:
             return
         counter=counter+1
 
