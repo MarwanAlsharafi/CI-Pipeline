@@ -1,37 +1,49 @@
 from unittest import TestCase
 
-students=[]
+students=[{'name':'Marwan','age':23,'id':60095071},{'name':'Ali','age':23,'id':60095555},
+          {'name':'Ahmed','age':24,'id':60097141},{'name':'Jamal','age':21,'id':60102546}]
 
 def AddStudent():
     counter=0
-    while counter!=3:
+    while counter!=1:
     
         name=str(input("enter your name"))
         age=int(input("enter your age"))
         id=int(input("enter the id"))
-
         
-        student(name,age,id)
+        student(name,age,id)    
+        students.append({'name':name,'age':age,'id':id,})
+        counter=counter+1
+        print(students)
 
-        if FindStudent(id)==True:
-            return
-            
-            
-        else:
-            
-            students.append({'name':name,'age':age,'id':id,})
-            counter=counter+1
-            print(students)
+    find=int(input('enter the student id to find the student'))
+        
+    FindStudent(find)
+
+    delete=int(input('enter the student id to delete the student'))
+    DeleteStudent(delete)
+
+    print(students)
 
 
 def FindStudent(id):
-    counter2=0
-    while counter2 < len(students):
-      
-        if students[counter2]['id']==id:
+    for i in range(len(students)):
+        if students[i]['id']==id:
             print("id exist")
+        else:
+            print("id does not exist")
+def DeleteStudent(id):
+    counter=0
+    while counter < len(students):
+      
+        if students[counter]['id']==id:
+            del students[counter]
             return
-        
+        counter=counter+1
+
+
+
+
 
 class student:
     def __init__(self,name,age,id):
@@ -51,15 +63,12 @@ class student:
         self.age = age
         self.id = id
 
-        @property
         def id(self):
             return self._id
 
-        @property
         def name(self):
             return self._name
 
-        @property
         def age(self):
             return self._age
 
