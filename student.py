@@ -30,18 +30,14 @@ def FindStudent(id):
     for i in range(len(students)):
         if students[i]['id']==id:
             print("id exist")
-        else:
-            print("id does not exist")
+        
 def DeleteStudent(id):
-    counter=0
-    while counter < len(students):
-      
-        if students[counter]['id']==id:
-            del students[counter]
-        else:
-            return
-        counter=counter+1
-
+   
+    for i in range(len(students)):
+        if students[i]['id']==id:
+            del  students[i]
+       
+           
 
 
 
@@ -81,16 +77,16 @@ class Student_Test(TestCase):
     def test_id(self):
         testStudent = student("Marwan", 22, 60095071)
 
-        self.assertEqual(testStudent.id, 1)
+        self.assertEqual(testStudent.id, 60096009)
 
     def test_If_ID_Is_negative(self):
         with self.assertRaises(TypeError):
             student("Marwan", 23, -1)
             
     def test_name(self):
-        testStudent = student("Marwan", 22, 60095071)
+        testStudent = student(25, 22, 60095071)
 
-        self.assertEqual(testStudent.name, "Marwan")
+        self.assertEqual(testStudent.name, 'Marwan')
 
     
     def test_age(self):
@@ -102,14 +98,7 @@ class Student_Test(TestCase):
         with self.assertRaises(TypeError):
             student("Marwan", -1, 1)
 
-#to test the student info 
 
-s=Student_Test()
-#s.test_name()
-#s.test_id()
-#s.test_age()
-#s.test_if_Age_is_negative()
-#s.test_If_ID_Is_negative()
 
 
 AddStudent()
