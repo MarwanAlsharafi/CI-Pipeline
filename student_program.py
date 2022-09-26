@@ -1,4 +1,4 @@
-from unittest import TestCase
+
 
 students=[{'name':'Marwan','age':23,'id':60095071},{'name':'Ali','age':23,'id':60095555},
           {'name':'Ahmed','age':24,'id':60097141},{'name':'Jamal','age':21,'id':60102546}]
@@ -68,40 +68,6 @@ class student:
 
         def age(self):
             return self._age
-
-        
-
-
-
-class Student_Test(TestCase):
-    def test_id(self):
-        testStudent = student("Marwan", 22, 60095071)
-
-        self.assertEqual(testStudent.id, 60096009)
-
-    def test_If_ID_Is_negative(self):
-        with self.assertRaises(TypeError):
-            student("Marwan", 23, -1)
-            
-    def test_name(self):
-        testStudent = student(25, 22, 60095071)
-
-        self.assertEqual(testStudent.name, 'Marwan')
-
-    
-    def test_age(self):
-        testStudent = student("Marwan", -22, 60095071)
-
-        self.assertEqual(testStudent.age, 22)
-
-    def test_if_Age_is_negative(self):
-        with self.assertRaises(TypeError):
-            student("Marwan", -1, 1)
-
-
-
-
-AddStudent()
 
 
 
