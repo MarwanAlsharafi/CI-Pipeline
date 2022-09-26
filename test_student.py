@@ -13,7 +13,7 @@ class Student_Test(TestCase):
             student("Marwan", 23, -1)
 
     def test_name(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             student(25, 23, -1)
 
     def test_age(self):
